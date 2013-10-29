@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{479CCA48-6C1A-4B7A-9532-323001967B2A}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RootSEIOS</RootNamespace>
+    <AssemblyName>RootSEIOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;ROOTSE;IOS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>ROOTSE;IOS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Windows|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Windows\</OutputPath>
+    <DefineConstants>DEBUG;ROOTSE;IOS</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="monotouch">
+      <HintPath>..\..\LookHere\monotouch.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\ColumnIndex.cs" />
+    <Compile Include="Engine\Conventions.cs" />
+    <Compile Include="Engine\DocumentSerializer.cs" />
+    <Compile Include="Engine\DocumentStore.cs" />
+    <Compile Include="Engine\DocumentTable.cs" />
+    <Compile Include="Engine\DocumentTables.cs" />
+    <Compile Include="Engine\ISession.cs" />
+    <Compile Include="Engine\ProviderStorage.cs" />
+    <Compile Include="Engine\Relation.cs" />
+    <Compile Include="Engine\RelationStorage.cs" />
+    <Compile Include="Engine\Session.cs" />
+    <Compile Include="IRelation.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="IStorageTransaction.cs" />
+    <Compile Include="ORM\Attributes.cs" />
+    <Compile Include="ORM\Repository.cs" />
+    <Compile Include="ORM\RepositoryException.cs" />
+    <Compile Include="ORM\RepositoryExtensions.cs" />
+    <Compile Include="ORM\Schema.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Column.cs" />
+    <Compile Include="Provider\ColumnValue.cs" />
+    <Compile Include="Provider\Datatypes.cs" />
+    <Compile Include="Provider\Escape.cs" />
+    <Compile Include="Provider\Index.cs" />
+    <Compile Include="Provider\IProviderTransaction.cs" />
+    <Compile Include="Provider\IStorageProvider.cs" />
+    <Compile Include="Provider\IValueSerializer.cs" />
+    <Compile Include="Provider\Limit.cs" />
+    <Compile Include="Provider\NewtonsoftJsonValueSerializer.cs" />
+    <Compile Include="Provider\OrderBy.cs" />
+    <Compile Include="Provider\ORM.cs" />
+    <Compile Include="Provider\RelationQuery.cs" />
+    <Compile Include="Provider\RTree\IRTreeIndex.cs" />
+    <Compile Include="Provider\RTree\IRTreeProvider.cs" />
+    <Compile Include="Provider\RTree\RTreeIndex.cs" />
+    <Compile Include="Provider\RTree\RTreeProvider.cs" />
+    <Compile Include="Provider\RTree\RTreeProviderExtensions.cs" />
+    <Compile Include="Provider\SQLite\ColumnQueryParam.cs" />
+    <Compile Include="Provider\SQLite\FieldReader.cs" />
+    <Compile Include="Provider\SQLite\SQLite.cs" />
+    <Compile Include="Provider\SQLite\SQLiteException.cs" />
+    <Compile Include="Provider\SQLite\SQLiteImplementation.cs" />
+    <Compile Include="Provider\SQLite\SQLiteProvider.cs" />
+    <Compile Include="Provider\SQLite\TypeDependentMethods.cs" />
+    <Compile Include="Provider\SQLSyntax.cs" />
+    <Compile Include="Provider\StorageProvider.cs" />
+    <Compile Include="Provider\StorageProviderExpressionExtensions.cs" />
+    <Compile Include="Provider\StorageProviderExtensions.cs" />
+    <Compile Include="Provider\StorageProviderORMExtensions.cs" />
+    <Compile Include="Provider\Term.cs" />
+    <Compile Include="Provider\TransactionCoordinator.cs" />
+    <Compile Include="Provider\ValueEncoder.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="StorageExtensions.cs" />
+    <Compile Include="StorageProviderOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Newtonsoft.Json\Newtonsoft.Json\Newtonsoft.Json.MonoTouch.csproj">
+      <Project>{12448CD5-D860-4C1C-8B9F-139F3794B9BC}</Project>
+      <Name>Newtonsoft.Json.MonoTouch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolboxIOS.csproj">
+      <Project>{4EBF5300-71DD-4A27-8FE6-2D0E0E1053DC}</Project>
+      <Name>ToolboxIOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDFDAB9E-85BB-4E44-B157-E85295805381}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DomainModeling</RootNamespace>
+    <AssemblyName>DomainModelingIOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultImplementation.cs" />
+    <Compile Include="Detail\DomainEvolutionService.cs" />
+    <Compile Include="Detail\EventDispatcher.cs" />
+    <Compile Include="Detail\EventDistributor.cs" />
+    <Compile Include="Detail\ObjectDispatcher.cs" />
+    <Compile Include="Detail\ObjectDistributor.cs" />
+    <Compile Include="Detail\VersionRecord.cs" />
+    <Compile Include="Detail\VersionTable.cs" />
+    <Compile Include="DomainViewBuilderObjectDistributor.cs" />
+    <Compile Include="DomainModelingFactory.cs" />
+    <Compile Include="DomainModelingTools.cs" />
+    <Compile Include="DomainModelObjectDistributor.cs" />
+    <Compile Include="DomainRepositories.cs" />
+    <Compile Include="DomainViewBuilderEventDistributor.cs" />
+    <Compile Include="IBootstrapFromDomainObject.cs" />
+    <Compile Include="IChangeSetWriter.cs" />
+    <Compile Include="ICompensatingChangeSetGenerator.cs" />
+    <Compile Include="ICopyService.cs" />
+    <Compile Include="IDestructiveDomainEvent.cs" />
+    <Compile Include="IDocumentMetadataProvider.cs" />
+    <Compile Include="IDomainEvent.cs" />
+    <Compile Include="IDomainEventsSpecification.cs" />
+    <Compile Include="IDomainEvolutionService.cs" />
+    <Compile Include="IDomainModel.cs" />
+    <Compile Include="IDomainModelBootstrapper.cs" />
+    <Compile Include="IDomainModelBuilder.cs" />
+    <Compile Include="IDomainModelRegistry.cs" />
+    <Compile Include="IDomainObject.cs" />
+    <Compile Include="IDomainViewBuilder.cs" />
+    <Compile Include="IEventDistributor.cs" />
+    <Compile Include="IEventTransaction.cs" />
+    <Compile Include="IHandleEvent.cs" />
+    <Compile Include="IHandleEventTransactions.cs" />
+    <Compile Include="IObjectDistributor.cs" />
+    <Compile Include="IReplayService.cs" />
+    <Compile Include="ITransformEvent.cs" />
+    <Compile Include="IUndoRedo.cs" />
+    <Compile Include="Meta\AttributeAccessor.cs" />
+    <Compile Include="Meta\Build.cs" />
+    <Compile Include="Meta\GuidAccessor.cs" />
+    <Compile Include="Meta\MetaType.cs" />
+    <Compile Include="Meta\Referrer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="Storage\ChangeSet.cs" />
+    <Compile Include="Storage\ChangeSetDenormalizer.cs" />
+    <Compile Include="Storage\ChangeSetWriter.cs" />
+    <Compile Include="Storage\CompensatingChangeSet.cs" />
+    <Compile Include="Storage\CompensatingChangeSetWriter.cs" />
+    <Compile Include="Storage\DocumentMetadataProvider.cs" />
+    <Compile Include="Storage\DomainEvent.cs" />
+    <Compile Include="Storage\DomainEventJsonConverter.cs" />
+    <Compile Include="Storage\DomainEventRegistry.cs" />
+    <Compile Include="Storage\DomainModelBootstrapper.cs" />
+    <Compile Include="Storage\DomainModelRegistry.cs" />
+    <Compile Include="Storage\DomainSerializer.cs" />
+    <Compile Include="Storage\LocalDataStore.cs" />
+    <Compile Include="Storage\RedoStack.cs" />
+    <Compile Include="Storage\ReferrerResolver.cs" />
+    <Compile Include="Storage\ReplayService.cs" />
+    <Compile Include="Storage\UndoRedo.cs" />
+    <Compile Include="Tools\CopyService.cs" />
+    <Compile Include="Tools\CopySession.cs" />
+    <Compile Include="Tools\ModificationTracker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Newtonsoft.Json\Newtonsoft.Json\Newtonsoft.Json.MonoTouch.csproj">
+      <Project>{12448CD5-D860-4C1C-8B9F-139F3794B9BC}</Project>
+      <Name>Newtonsoft.Json.MonoTouch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RootSE\RootSEIOS.csproj">
+      <Project>{479CCA48-6C1A-4B7A-9532-323001967B2A}</Project>
+      <Name>RootSEIOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolboxIOS.csproj">
+      <Project>{4EBF5300-71DD-4A27-8FE6-2D0E0E1053DC}</Project>
+      <Name>ToolboxIOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
