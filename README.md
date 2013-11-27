@@ -2,6 +2,14 @@
 
 This repository contains a number of useful C# classes, which are used in [SharedSafe](http://www.sharedsafe.com).
 
+## Contained Open Source Projects
+
+This repository also contains code from the following open source projects:
+
+- [JsonEx](https://code.google.com/p/jsonexserializer/) (c) Ted Elliott, licensed under [the New BSD License](https://code.google.com/p/jsonexserializer/wiki/License).
+- [Newtonsoft.Json](http://james.newtonking.com/json) (c) James Newton-King, licensed under [the MIT License](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md)
+- [SQLite](http://www.sqlite.org/) in the [Public Domain](http://www.sqlite.org/copyright.html)
+
 ## License
 
 Copyright (c) 2013, rootloft GmbH & Armin Sander, All rights reserved.
